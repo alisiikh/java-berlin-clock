@@ -31,40 +31,20 @@ public final class BerlinClock {
 		return secondBlink;
 	}
 
-	public void setSecondBlink(boolean secondBlink) {
-		this.secondBlink = secondBlink;
-	}
-
 	public int getHoursTopBlinks() {
 		return hoursTopBlinks;
-	}
-
-	public void setHoursTopBlinks(int hoursTopBlinks) {
-		this.hoursTopBlinks = hoursTopBlinks;
 	}
 
 	public int getHoursBottomBlinks() {
 		return hoursBottomBlinks;
 	}
 
-	public void setHoursBottomBlinks(int hoursBottomBlinks) {
-		this.hoursBottomBlinks = hoursBottomBlinks;
-	}
-
 	public int getMinutesTopBlinks() {
 		return minutesTopBlinks;
 	}
 
-	public void setMinutesTopBlinks(int minutesTopBlinks) {
-		this.minutesTopBlinks = minutesTopBlinks;
-	}
-
 	public int getMinutesBottomBlinks() {
 		return minutesBottomBlinks;
-	}
-
-	public void setMinutesBottomBlinks(int minutesBottomBlinks) {
-		this.minutesBottomBlinks = minutesBottomBlinks;
 	}
 
 	@Override
