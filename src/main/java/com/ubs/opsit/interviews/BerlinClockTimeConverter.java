@@ -12,7 +12,7 @@ import java.time.temporal.TemporalAccessor;
  */
 public final class BerlinClockTimeConverter implements TimeConverter {
 
-	private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+	private static final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
 	private final BerlinClockFormatter clockFormatter = new BerlinClockFormatter();
 
@@ -20,7 +20,7 @@ public final class BerlinClockTimeConverter implements TimeConverter {
 	public String convertTime(String aTime) {
 		Validate.notEmpty(aTime, "Provided time string is incorrect");
 
-		LocalTime localTime = LocalTime.parse(aTime, formatter);
+		LocalTime localTime = LocalTime.parse(aTime, timeFormatter);
 
 		int seconds = localTime.getSecond();
 		int hours = parseHours(aTime);
@@ -39,7 +39,7 @@ public final class BerlinClockTimeConverter implements TimeConverter {
 	}
 
 	private int parseHours(String aTime) {
-		TemporalAccessor accessor = formatter.parse(aTime);
+		TemporalAccessor accessor = timeFormatter.parse(aTime);
 		Period period = accessor.query(DateTimeFormatter.parsedExcessDays());
 
 		if (period.equals(Period.ofDays(1))) {
